@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#4a2e1d">
+<title>Feliz Cumple, Ana 🤠</title>
+<link rel="icon" type="image/png" href="assets/icons/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sancreek&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+
+  <button id="backToCountdownBtn" onclick="showScreen('screen-countdown')" title="Volver a la cuenta regresiva">⏪</button>
+  <button id="muteBtn" onclick="toggleMute()" title="Silenciar / activar música">🔊</button>
+  <div id="volumeReminder" class="volume-reminder">🔊 Activá el volumen de tu dispositivo para escuchar la música</div>
+
+  <!-- ============================================================
+       PANTALLA 1: SPLASH
+  ============================================================ -->
+  <section id="screen-splash" class="screen active">
+    <div class="sky-bg"></div>
+    <canvas id="stars"></canvas>
+    <div class="badge">
+      <svg viewBox="0 0 100 100">
+        <polygon points="50,3 61,35 95,35 68,55 78,90 50,70 22,90 32,55 5,35 39,35"
+          fill="#f3dd8f" stroke="#4a2e1d" stroke-width="3"/>
+        <text x="50" y="58" font-family="Sancreek" font-size="20" fill="#4a2e1d" text-anchor="middle">A</text>
+      </svg>
+    </div>
+    <h1 class="display">Feliz Cumple, Ana 🤠</h1>
+    <div class="loadbar-track"><div class="loadbar-fill" id="loadbarFill"></div></div>
+    <div class="loadtext">Ensillando el caballo...</div>
+  </section>
+
+  <!-- ============================================================
+       PANTALLA 2: CUENTA REGRESIVA
+       ⚙️ Fecha objetivo: 21/07/2026 00:00 (editable en el JS, buscá CONFIG.targetDate)
+  ============================================================ -->
+  <section id="screen-countdown" class="screen">
+    <div class="sky-bg"></div>
+    <canvas id="stars2"></canvas>
+    <h2 class="display">🎉 Faltan para tu Cumple 🎉</h2>
+    <p class="sub">21 de julio — Cumple Analinchis</p>
+    <div class="countdown-grid" id="countdownGrid">
+      <div class="cd-box"><div class="num" id="cdDays">--</div><div class="lab">días</div></div>
+      <div class="cd-box"><div class="num" id="cdHours">--</div><div class="lab">horas</div></div>
+      <div class="cd-box"><div class="num" id="cdMins">--</div><div class="lab">min</div></div>
+      <div class="cd-box"><div class="num" id="cdSecs">--</div><div class="lab">seg</div></div>
+    </div>
+    <div class="cd-arrived" id="cdArrived">
+      <h2 class="display">🎂 ¡HOY ES TU DÍA, ANA! 🎂</h2>
+    </div>
+    <p class="sub" id="waitMsg" style="margin-top:22px; max-width:420px;">
+      Sé que tenés ganas de abrirlo ya... pero mientras tanto, andá entrando y mirando las sorpresas
+      que te tenemos preparadas!👇
+    </p>
+    <button class="btn-main" id="btnToIntro">Ir descubriendo las sorpresas 🐎</button>
+  </section>
+
+  <!-- ============================================================
+       PANTALLA 3: INTRO CINEMATOGRÁFICA
+  ============================================================ -->
+  <section id="screen-intro" class="screen">
+    <canvas id="starsIntro"></canvas>
+    <div class="intro-layout">
+      <div id="introPhotoBig" class="intro-photo-big"></div>
+      <div id="introLineHolder" class="intro-text-holder"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PANTALLA 4: MAPA / MENÚ PRINCIPAL (el "pueblo del oeste")
+  ============================================================ -->
+  <section id="screen-map" class="screen">
+    <div class="sky-bg"></div>
+    <canvas id="stars3"></canvas>
+    <h2 class="display">A jugar</h2>
+    <p class="hint">Recorré cada juego, Cada uno te da una pieza del mensaje final ✨</p>
+
+    <div class="phrase-track" id="phraseTrack"></div>
+
+    <div class="trail-wrap">
+      <div class="stops" id="stopsGrid">
+        <!-- generado por JS -->
+      </div>
+      <div class="final-stop-wrap" id="finalStopWrap">
+        <!-- generado por JS: misión "Final", centrada debajo del Álbum -->
+      </div>
+    </div>
+
+    <!-- ---- Panel: Recuerdos (timeline) ---- -->
+    <div class="section-panel" id="panel-recuerdos">
+      <h3 class="display">📅 Recuerdos</h3>
+      <div class="timeline" id="timelineList">
+        <!-- ⚙️ EDITÁ ACÁ tus recuerdos: buscá MEMORIES en el JS -->
+      </div>
+      <button class="close-panel" onclick="closePanel('recuerdos')">Volver</button>
+    </div>
+
+    <!-- ---- Panel: Álbum ---- -->
+    <div class="section-panel" id="panel-album">
+      <h3 class="display">📸 Álbum</h3>
+      <p class="hint" style="margin-bottom:14px;">Cada foto se desbloquea ganando un juego en la misión "Juegos" 🔒➡️📷</p>
+      <div class="album-grid" id="albumGrid">
+        <!-- ⚙️ EDITÁ ACÁ tus fotos: buscá PHOTOS en el JS -->
+      </div>
+      <button class="close-panel" onclick="closePanel('album')">Volver</button>
+    </div>
+
+    <!-- ---- Panel: Juegos ---- -->
+    <div class="section-panel" id="panel-juegos">
+      <h3 class="display">🎮 Juegos del pueblo</h3>
+      <p class="hint" style="margin-bottom:14px;">Completá los 5 juegos para terminar esta misión 🏆</p>
+      <div class="games-grid" id="gamesGrid">
+        <div class="game-card" onclick="openGame('memo')">
+          <div class="ico">🃏</div><div class="name">Memotest</div><div class="st" id="st-memo">Pendiente</div>
+        </div>
+        <div class="game-card" onclick="openGame('heart')">
+          <div class="ico">❤️</div><div class="name">Encontrá el corazón</div><div class="st" id="st-heart">Pendiente</div>
+        </div>
+        <div class="game-card" onclick="openGame('puzzle')">
+          <div class="ico">🧩</div><div class="name">Rompecabezas</div><div class="st" id="st-puzzle">Pendiente</div>
+        </div>
+        <div class="game-card" onclick="openGame('stars')">
+          <div class="ico">⭐</div><div class="name">Atrapa estrellas</div><div class="st" id="st-stars">Pendiente</div>
+        </div>
+        <div class="game-card" onclick="openGame('safe')">
+          <div class="ico">🦆</div><div class="name">Tiro al pato</div><div class="st" id="st-safe">Pendiente</div>
+        </div>
+      </div>
+
+      <!-- Memotest -->
+      <div class="game-area" id="game-memo">
+        <h4>Memotest 🃏</h4>
+        <div class="mem-grid" id="memGrid"></div>
+      </div>
+      <!-- Heart -->
+      <div class="game-area" id="game-heart">
+        <h4>Encontrá el corazón escondido ❤️</h4>
+        <div class="heart-field" id="heartField"></div>
+      </div>
+      <!-- Puzzle: arrastrar piezas sueltas al marco -->
+      <div class="game-area" id="game-puzzle">
+        <h4>Armá la foto 🧩</h4>
+        <p class="game-instructions">Tocá una pieza y después tocá el casillero del marco donde va</p>
+        <div class="jigsaw-wrap" id="jigsawWrap">
+          <div class="jigsaw-frame" id="jigsawFrame"></div>
+          <div class="jigsaw-tray" id="jigsawTray"></div>
+        </div>
+      </div>
+      <!-- Stars -->
+      <div class="game-area" id="game-stars">
+        <h4>Atrapá 8 estrellas ⭐</h4>
+        <div class="catch-score" id="catchScore">0 / 8</div>
+        <div class="catch-field" id="catchField"></div>
+      </div>
+      <!-- Tiro al pato -->
+      <div class="game-area" id="game-safe">
+        <h4>Tiro al pato 🦆🔫</h4>
+        <p class="game-instructions">Tocá 3 patos antes de que se escapen</p>
+        <div class="duck-box">
+          <div class="catch-score" id="duckScore">0 / 3</div>
+          <div class="duck-field" id="duckField"></div>
+        </div>
+      </div>
+
+      <button class="close-panel" onclick="closePanel('juegos')">Volver</button>
+    </div>
+
+    <!-- La música ahora es ambiental: arranca sola al entrar al pueblo y cambia
+         sola de canción cuando llega el cumple real. Ver botón de silenciar 🔊 fijo. -->
+    <audio id="audioBefore" loop preload="none">
+      <source src="assets/audio/cancion-favorita.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="audioAfter" loop preload="none">
+      <source src="assets/audio/cancion-especial.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- ---- Panel: Final (acceso directo si ya completó todo) ---- -->
+    <div class="section-panel" id="panel-final-lock">
+      <h3 class="display">✨ El Final</h3>
+      <p style="text-align:center; color:var(--cream); margin-bottom:16px;" id="finalLockMsg">Todavía te faltan misiones por completar...</p>
+      <button class="close-panel" onclick="closePanel('final-lock')">Volver atras</button>
+    </div>
+
+    <div class="progress-fab" id="progressFab">0 / 5 misiones</div>
+  </section>
+
+  <!-- ============================================================
+       PANTALLA 5: FINAL
+  ============================================================ -->
+  <section id="screen-final" class="screen">
+    <div class="sky-bg"></div>
+    <canvas id="fireworks"></canvas>
+    <div class="final-text">
+      <h1 class="display" id="finalTitle">FELIZ CUMPLEAÑOS</h1>
+      <h2 class="display" id="finalName">ANA</h2>
+      <p class="final-sub">Se desbloqueó todo esto para vos 💛</p>
+      <div class="final-slideshow" id="finalSlideshow">
+        <div class="fs-frame" id="fsFrame"></div>
+      </div>
+      <div class="final-letters" id="finalLetters">
+        <button class="btn-main final-letter-btn" onclick="openFinalLetter(0)">💛 Carta de Pirulinchis</button>
+        <button class="btn-main final-letter-btn" onclick="openFinalLetter(1)">💙 Carta de Polarinchis</button>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- Modal para cartas y recuerdos -->
+<div class="letter-modal" id="letterModal">
+  <div class="letter-paper">
+    <div class="letter-close" onclick="closeLetter()">✕</div>
+    <div id="letterModalBody"></div>
+  </div>
+</div>
+
+<!-- Lightbox para agrandar fotos del álbum -->
+<div class="photo-lightbox" id="photoLightbox" onclick="closeLightbox()">
+  <div class="lightbox-close">✕</div>
+  <img id="lightboxImg" src="" alt="">
+  <div id="lightboxCaption" class="lightbox-caption"></div>
+</div>
+
+<!-- Toast de logros -->
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

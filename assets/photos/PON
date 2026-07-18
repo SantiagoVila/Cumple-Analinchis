@@ -1,0 +1,16 @@
+Subí acá tus fotos (foto1.jpg, foto2.jpg, etc).
+
+Después andá a js/data.js:
+
+1) Buscá "PHOTOS" y completá cada src, por ejemplo:
+     { src:"assets/photos/foto1.jpg", caption:"Cumple de los 5", game:"memo" },
+
+2) Buscá "PUZZLE_PHOTO" y poné la foto que querés que arme el minijuego
+   del rompecabezas, por ejemplo:
+     const PUZZLE_PHOTO = "assets/photos/rompecabezas.jpg";
+   Elegí una foto cuadrada (o lo más cuadrada posible) para que no se
+   deforme al cortarla en 9 partes.
+
+Tip: si las fotos pesan mucho (más de 1-2 MB cada una), la página
+puede tardar en cargar. Achicalas antes si podés (cualquier compresor
+de imágenes online sirve, tipo squoosh.app o tinypng.com).
