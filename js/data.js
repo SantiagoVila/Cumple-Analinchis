@@ -7,7 +7,7 @@
    ============================================================ */
 
 const CONFIG = {
-  targetDate: new Date(Date.now() + 50000), // 21/07/2026 00:00  (mes en JS arranca en 0 => 6 = julio)
+  targetDate: new Date(2026, 6, 21, 0, 0, 0), // 21/07/2026 00:00  (mes en JS arranca en 0 => 6 = julio)
   name: "Ana",
   signature: "Pirulinchis y Polarinchis",
   // ⚙️ Nombre para mostrar de cada canción (solo texto, el archivo real se pone arriba en los <audio>)
