@@ -43,7 +43,49 @@ Te quiero muchisimooo analinchiiiiiiisssss (POR MAS QUE VOS ME ODIES)🤠💛`
   {
     from: "Polarinchis",
     emoji: "💙",
-    text: `Feliz cumple, Ana. Armar esto me hizo dar cuenta de la cantidad de recuerdos que tenemos dando vueltas — y eso que seguro me olvidé de la mitad. Sos de esas personas que hacen que todo sea mejor con solo estar ahí, y este año quiero devolverte un poquito de todo lo que nos das siempre. Que lo festejes como se merece, que te rías mucho y que este sea el primero de muchos cumples más para celebrar juntos. Te quiero muchísimo 💙`
+    text: `Holis analinchis,
+Sinceramente te mentiría que se cómo iniciar esta carta, pero lo intentaré. 
+La verdad me siento demasiado agradecida contigo por todo lo que has hecho por mí, aunque por más insignificante que parezca, todo ello me ah demostrado lo muy bella persona que eres. Y no estoy hablando sobre lo físico (aunque también estas guapísima amiga😚). Fuiste y eres una gran persona Ana. 
+
+Sé muy bien que nos conocíamos más de un año. Pero conectamos en el momento más indicado.
+
+Hay una palabra que me gusta mucho, es lúmina. Significa luz. La capacidad de irradiar luz propia: inspiración, verdad y sensibilidad. Una forma de iluminar el mundo a través de lo que se crea y se siente.
+
+Para mí eres lúmina que elunara a todo aquel que se le atraviese.
+•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•
+
+Lúmina: La capacidad de irradiar luz propia: inspiración, verdad y sensibilidad. Una forma de iluminar el mundo a través de lo que se crea y se siente.
+Elunara: Aprender a sanar con tu propia luz.
+
+•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•~•
+
+Y cómo obviamente amo expresarme en poemas, este es para ti.
+
+
+
+No se muy bien a donde me lleva la vida.
+
+A veces me cruza con quienes menos lo espero, pero contigo, la sintonía no falla.
+Nos conocíamos de antes, es verdad,
+pero la vida nos unió en el momento exacto.
+Y en cada pequeño detalle que has tenido,
+dejaste una huella inmensa en nuestro impacto.
+Tu belleza se nota a simple vista,
+eres guapa, radiante y llena de encanto;
+pero es lo que llevas dentro de la alma
+lo que verdaderamente me conmueve tanto.
+Eres Lúmina, 
+una chispa que irradia luz, verdad y sensibilidad.
+Inspiras con cada cosa que creas y sientes,
+iluminando el mundo con pura autenticidad.
+Y en ese camino aprendiste a ser Elunara,
+a sanar tus heridas con tu propio resplandor,
+para iluminar de paso a cualquiera que te cruce,
+regalando siempre tu calma y tu calor.
+Gracias por ser una persona tan bella,
+por cada gesto, por estar y por coincidir.
+
+Ly u analinchis🤍🐽`
   }
 ];
 
