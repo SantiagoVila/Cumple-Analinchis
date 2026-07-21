@@ -20,7 +20,25 @@ const FINAL_LETTERS = [
   {
     from: "Pirulinchis",
     emoji: "💛",
-    text: `Ana, no sabés las ganas que tenía de que llegara este día para poder mostrarte todo esto. Arrancamos esta paginita con la excusa del cumple, pero terminó siendo una excusa para acordarme de mil cosas lindas juntas. Gracias por ser exactamente como sos: la persona que hace que cualquier plan, por más pavo que sea, se convierta en el mejor recuerdo del año. Ojalá este año te traiga todo lo que te merecés, que es mucho. Te quiero un montón, feliz cumple 🤠💛`
+    text: `Bueno llego el dia, Feliz cumpleaños
+
+La verdad que si hace un tiempo me decian que ibamos a hablar todos los dias asi hubiera dicho naaa ni empedo
+nunca imagine que en tan poco tiempo ibamos a volvernos tan cercanos, y que ahora se me haga raro si no hacemos 
+llamada o no hablamos un dia de cualquier boludes, creo que eso es lo mas lindo de todo, como sin darnos cuenta
+empezamos a ser parte de la rutina del otro y alegrandonos el dia a dia o ayudandonos hasta con lo mas minimo 
+
+gracias por siempre aguantarme cuando me pongo esquizo o digo boludeces y por hacer que un dia normal o que quiza
+no era el mejor sea mucho mas divertido, realmente pasa el tiempo volando cuando hablamos
+
+espero que en este cumpleaños la pases super bien seas muy feliz te llenen de caramelos y comida, y nada espero
+que todos puedan conocer a una analinchis en su vida para que les alegre los dias, pero nada espero esto sea
+el arranque de la amistad y que podamos seguir haciendo llamadas, chismosear, molestarnos y hacer boludeces juntos
+y quiza quien dice en un futuro conocernos!! y reirnos y comer mucho mucho 
+
+pero bueno nada, Feliz cumple analinchis, espero disfrutes mucho que te lo super mereces y gracias por aparecer asi
+en mi vida de nuevo y por convertirte en tan poco tiempo en una persona tan importante para mi 
+
+Te quiero muchisimooo analinchiiiiiiisssss (POR MAS QUE VOS ME ODIES)🤠💛`
   },
   {
     from: "Polarinchis",
